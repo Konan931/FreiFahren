@@ -15,6 +15,13 @@
             "when": 1770824145557,
             "tag": "0001_tearful_slayback",
             "breakpoints": true
+        },
+        {
+            "idx": 2,
+            "version": "7",
+            "when": 1788386564460,
+            "tag": "0002_add_cities_identity",
+            "breakpoints": true
         }
     ]
 }
