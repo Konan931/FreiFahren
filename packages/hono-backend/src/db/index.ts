@@ -1,6 +1,7 @@
 import { drizzle } from 'drizzle-orm/postgres-js'
 import postgres from 'postgres'
 
+import { cities } from './schema/cities'
 import { feedback } from './schema/feedback'
 import { lines, lineStations } from './schema/lines'
 import { reports } from './schema/reports'
@@ -10,12 +11,13 @@ const connectionString = process.env.DATABASE_URL!
 
 export const client = postgres(connectionString, { prepare: false })
 export const db = drizzle(client, {
-    schema: { reports, stations, lines, lineStations, feedback },
+    schema: { reports, stations, lines, lineStations, feedback, cities },
     casing: 'snake_case',
 })
 
 export type DbConnection = typeof db
 
+export * from './schema/cities'
 export * from './schema/feedback'
 export * from './schema/reports'
 export * from './schema/lines'
